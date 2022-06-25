@@ -15,12 +15,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/dt-1.12.1/datatables.min.css"/>
     <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/dt-1.12.1/datatables.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet" href="{{url('css/table.css')}}">
 </head>
 <body>
     <h1>User Data Table</h1>
     <div class="add-user-container">
-        <a href="add" class="btn btn-primary mb-3">Add User</a>
+        <a href="user" class="btn btn-primary mb-3">Add User</a>
     </div>
     <div class="container">
         <div class="table-container">
@@ -36,27 +37,30 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Joash</td>
-                        <td>asd </td>
-                        <td>San Francisco</td>
-                        <td>66</td>
-                        <td>2009-01-12</td>
-                        <td>$86,000</td>
-                    </tr>
-                    <tr>
-                        <td>Joash</td>
-                        <td>asd </td>
-                        <td>San Francisco</td>
-                        <td>66</td>
-                        <td>2009-01-12</td>
-                        <td>$86,000</td>
-                    </tr>
+                    @foreach ($collection as $item)
+                        @php
+                        $lastname = strtoupper($item['lastname']);
+                        $firstname = strtoupper($item['firstname']);
+                        $middlename = substr(strtoupper($item['middlename']),0,1);
+                        $birthdate = substr($item['birthdate'],5,2) . "/" . substr($item['birthdate'],8,2) . "/" . substr($item['birthdate'],0,4);
+                        @endphp
+                        <tr>
+                            <td>{{$lastname}}, {{$firstname}} {{$middlename}}.</td>
+                            <td>{{$birthdate}}</td>
+                            <td>{{$item['age']}}</td>
+                            <td>{{$item['email']}}</td>
+                            <td>{{$item['phone_number']}}</td>
+                            <td class="action-td">
+                                <button class="btn btn-success"><span class="material-symbols-rounded">edit</span></button>
+                                <button class="btn btn-danger"><span class="material-symbols-rounded">delete</span></button>
+                            </td>   
+                        </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>
     </div>
-
+    
     <script src="js/table.js"></script>
 </body>
 </html>

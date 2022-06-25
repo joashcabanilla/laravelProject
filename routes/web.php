@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\userController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,14 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::view('/', 'home');
-Route::view('home','home');
-Route::view('add', 'addData');
+// Route::view('/', 'home');
+// Route::view('home','home');
+// Route::view('add', 'addData');
+
+Route::get("user",[userController::class,'loadUserData']);
+
+//Route Model get user data
+
+Route::get("home",[userController::class,'getUserData']);
+Route::get("/",[userController::class,'getUserData']);
+Route::get("users",[userController::class,'getUser']);
