@@ -19,8 +19,7 @@ const getAge = (birthdate, yearToday, monthToday, dateToday) => {
     return parseInt(age);
 }
 
-$(".userform").submit((e) => {
-    e.preventDefault();
+$(".userform").submit(() => {
     let firstname = $("#firstname").val();
     let middlename = $("#middlename").val();
     let lastname = $("#lastname").val();
@@ -33,7 +32,7 @@ $(".userform").submit((e) => {
             lastname.length == 1 ? $(".error-text").text("Invalid Lastname") :
                 today == birthdate || parseInt(birthdate.split("-")[0]) > 2004 ? $(".error-text").text("Required Age is 18yrs old above") :
                     password != confirmpassword ? $(".error-text").text("Password did not match") :
-                        alert("User Form Submitted");
+                        null;
 });
 
 $("input[name='phone']").on('input', function (e) {

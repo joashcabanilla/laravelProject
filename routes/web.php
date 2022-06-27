@@ -22,10 +22,12 @@ use App\Http\Controllers\userController;
 // Route::view('home','home');
 // Route::view('add', 'addData');
 
-Route::get("user",[userController::class,'loadUserData']);
+// Route::get("user",[userController::class,'loadUserData']);
 
 //Route Model get user data
+// Route::get("home",[userController::class,'getUserData']);
+// Route::get("users",[userController::class,'getUser']);
 
-Route::get("home",[userController::class,'getUserData']);
-Route::get("/",[userController::class,'getUserData']);
-Route::get("users",[userController::class,'getUser']);
+Route::get("/{action}",[userController::class,'getUserData']);
+Route::get("/",[userController::class,'loadIndex']);
+Route::post('createUser',[userController::class, 'userAddData']);
