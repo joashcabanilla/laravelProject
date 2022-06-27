@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\userController;
+use App\Http\Controllers\crudController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,4 +31,9 @@ use App\Http\Controllers\userController;
 
 Route::get("/{action}",[userController::class,'getUserData']);
 Route::get("/",[userController::class,'loadIndex']);
-Route::post('createUser',[userController::class, 'userAddData']);
+Route::get("edit/{id}",[userController::class,'editUserData']);
+
+//Post Route
+Route::post('createUser',[crudController::class, 'userAddData']);
+Route::put('updateUser/{id}',[crudController::class, 'userUpdateData']);
+Route::get("delete/{id}",[crudController::class,'deleteUserData']);

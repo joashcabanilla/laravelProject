@@ -29,8 +29,8 @@
                             <td>{{$item['email']}}</td>
                             <td>{{$item['phone_number']}}</td>
                             <td class="action-td">
-                                <a class="btn btn-success" href="edit"><span class="material-symbols-rounded">edit</span></a>
-                                <a class="btn btn-danger"><span class="material-symbols-rounded">delete</span></a>
+                                <a class="btn btn-success" href="edit/{{$item['id']}}"><span class="material-symbols-rounded">edit</span></a>
+                                <button class="btn btn-danger" id="deletebtn-{{$item['id']}}"><span id="deletebtn-{{$item['id']}}" class="material-symbols-rounded">delete</span></button>
                             </td>   
                         </tr>
                     @endforeach
