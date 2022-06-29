@@ -7,7 +7,7 @@
     <x-usertable :collection="$collection" />
    @elseif($action == "user")
    <x-header title="Add User Information"/>
-    <x-userdata />
+    <x-userdata :errors="$errors" />
    @endif
    <x-footer />
    <script src="js/user.js"></script>

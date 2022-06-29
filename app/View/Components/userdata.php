@@ -11,9 +11,10 @@ class userdata extends Component
      *
      * @return void
      */
-    public function __construct()
+    public $errors;
+    public function __construct($errors)
     {
-        //
+        $this->errors = $errors;
     }
 
     /**

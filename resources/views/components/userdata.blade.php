@@ -1,5 +1,9 @@
 <div class="error">
-    <p class="error-text"></p>
+    @if($errors->any())
+        @foreach ($errors->all() as $error)
+            <p class="error-text">{{$error}}</p>
+        @endforeach
+    @endif
 </div>
 <div class="main-container">
 

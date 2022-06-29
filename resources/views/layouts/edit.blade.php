@@ -4,7 +4,11 @@
 <body>
     <x-header title="Update User Information"/>
     <div class="error">
-        <p class="error-text"></p>
+        @if($errors->any())
+            @foreach ($errors->all() as $error)
+                <p class="error-text">{{$error}}</p>
+            @endforeach
+        @endif
     </div>
     <div class="main-container">
         <form class="row g-3 userform" action="{{url("updateUser/". $id)}}" method="POST">

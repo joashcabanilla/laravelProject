@@ -40,19 +40,19 @@ $("input[name='phone_number']").on('input', function (e) {
 });
 
 $("input[name='firstname']").on('input', function (e) {
-    $(this).val($(this).val().replace(/[^A-Za-z]/g, ''));
+    $(this).val($(this).val().replace(/[^A-Z a-z]/g, ''));
 });
 
 $("input[name='middlename']").on('input', function (e) {
-    $(this).val($(this).val().replace(/[^A-Za-z]/g, ''));
+    $(this).val($(this).val().replace(/[^A-Z a-z]/g, ''));
 });
 
 $("input[name='lastname']").on('input', function (e) {
-    $(this).val($(this).val().replace(/[^A-Za-z]/g, ''));
+    $(this).val($(this).val().replace(/[^A-Z a-z]/g, ''));
 });
 
 $("input[name='birthplace']").on('input', function (e) {
-    $(this).val($(this).val().replace(/[^A-Za-z]/g, ''));
+    $(this).val($(this).val().replace(/[^A-Z a-z]/g, ''));
 });
 
 $("#birthdate").change(() => {

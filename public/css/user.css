@@ -47,13 +47,12 @@ form {
 .div-input label,
 .phone label {
     width: 15rem;
-    font-family: arial;
     text-align: right;
     padding-right: 0.5rem;
     font-weight: 500;
 }
 
-.div-input .name input,
+.name input,
 textarea {
     text-transform: capitalize;
 }

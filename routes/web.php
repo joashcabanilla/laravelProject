@@ -33,7 +33,10 @@ Route::get("/{action}",[userController::class,'getUserData']);
 Route::get("/",[userController::class,'loadIndex']);
 Route::get("edit/{id}",[userController::class,'editUserData']);
 
-//Post Route
+//CRUD Route
 Route::post('createUser',[crudController::class, 'userAddData']);
 Route::put('updateUser/{id}',[crudController::class, 'userUpdateData']);
 Route::get("delete/{id}",[crudController::class,'deleteUserData']);
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
